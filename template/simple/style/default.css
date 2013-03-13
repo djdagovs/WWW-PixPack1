@@ -1,0 +1,32 @@
+.gallery_title {
+	text-align: center;
+	font-size: 20px;
+}
+
+.gallery_description {
+	border-width: 1px;
+	border-style: solid;
+	font-style: italic;
+	margin: 20px;
+}
+
+.gallery_image table, .gallery_image table tr, .gallery_image table tr td {
+	margin: 0px;
+	padding: 0px;
+}
+
+.gallery_image a {
+	/*text-decoration: none;*/
+	border: 0px none;
+}
+
+.gallery_image img {
+	width: 120px;
+	border-width: 1px;
+	border-style: solid;
+	margin: 5px;
+}
+
+.gallery_page {
+	text-align: center;
+}

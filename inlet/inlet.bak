@@ -1,0 +1,115 @@
+function writeForm() {
+	document.writeln('<form id="upload_form" method="post" action="http://pixpack.net/upload" enctype="multipart/form-data">');
+	document.writeln('<input type="hidden" name="key" value="'+getKey()+'">');
+	document.writeln('<p>'+getText('datei')+'<br/>');
+	document.writeln('<input type="radio" name="type" value="file" checked="checked" onclick="upload_type(\'file\')"/>');
+	document.writeln('<input id="upload_file" type="file" name="file" class="upload_file"/>');
+	document.writeln('</p><p>'+getText('url')+'<br/>');
+	document.writeln('<input type="radio" name="type" value="url" onclick="upload_type(\'url\')"/>');
+	document.writeln('<input id="upload_url" type="text" name="url" class="upload_url" disabled="disabled"/>');
+	document.writeln('</p><hr/>');
+	document.writeln('<input type="submit" name="submit" class="upload_submit" value="'+getText('submit')+'"/>');
+	document.writeln('</form>');
+}
+
+function writeError() {
+	document.writeln('<div style="color: red; font-weight: bold;">Unable to load the PixPack-Inlet.</div>');
+}
+
+function getKey() {
+	return 'key';
+}
+
+function getText(key) {
+	return _pixpack_language[key];
+}
+
+function isValid() {
+	if(!pixpack_user) return false;
+
+	_pixpack_language=new Object();
+	alert();
+	if((typeof pixpack_language)!='undefined') {
+		if(pixpack_language=='de') {
+		_pixpack_language['file']='Datei';
+		_pixpack_language['url']='URL';
+		_pixpack_language['submit']='Speichern';
+		
+		return;
+		};
+	}
+	_pixpack_language='en';
+	_pixpack_language['file']='File';
+	_pixpack_language['url']='URL';
+	_pixpack_language['submit']='Save';
+	
+	return false;
+}
+
+function upload_type(pType) {
+	if(pType==gUploadType) return;
+	if(pType=='file') {
+		document.getElementById('upload_file').disabled=false;
+		document.getElementById('upload_url').disabled=true;
+		document.getElementById('upload_file').focus();
+	} else {
+		document.getElementById('upload_file').disabled=true;
+		document.getElementById('upload_url').disabled=false;
+		document.getElementById('upload_url').focus();
+	}
+	gUploadType=pType;
+}
+
+
+if(isValid()) {
+	writeForm();
+} writeError();
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function pixpack_checkExtension(file) {
+	if(_pixpack_isChecked) return;
+	
+	if(file.lastIndexOf('.img')!=-1) {
+		var extension;
+		if(file.indexOf('.jpg.img')!=-1) extension='.gif.img';
+		else if(file.indexOf('.gif.img')!=-1) extension='.png.img';
+		else if(file.indexOf('.png.img')!=-1) extension='.jpeg.img';
+		else {
+			//if(_pixpack_isCallback) pixpack_call(null);
+			//only if it is shown
+			if(_pixpack_isImage) document.getElementById(pixpack_image).src=pixpack_error;
+			_pixpack_isChecked=true;
+			return;
+		}
+			
+
+		file=file.substring(0,file.length-8);
+		//if(_pixpack_isCallback) pixpack_call(file+extension);
+		document.getElementById(pixpack_image).src=file+extension;
+	} else {
+		if(file.lastIndexOf('.')!=-1) {
+			if(file.indexOf('.jpg') || file.indexOf('.gif') ||file.indexOf('.png') ||file.indexOf('.jpeg')) {
+				//if(_pixpack_isCallback) pixpack_call(null);
+				//only if it is shown
+				if(_pixpack_isImage) document.getElementById(pixpack_image).src=file;
+			} // else html and so on	
+
+			_pixpack_isChecked=true;
+			return;
+		}
+		else document.getElementById(pixpack_image).src=file+'.jpg.img';
+	}
+}
+*/

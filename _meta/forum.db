@@ -1,0 +1,7 @@
+Type		=	MySQL
+Host		=	localhost
+Port		=	3306
+Name		=	pixpack
+User		=	pixpack
+Password	=	pixpack
+Table		=	phpbb_

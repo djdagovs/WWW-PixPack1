@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>pixpack</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+    	<servlet-name>Content</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Content</servlet-name>
+	    <url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>Sidebar</servlet-name>
+		<jsp-file>/sidebar/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Sidebar</servlet-name>
+	    <url-pattern>*.sidebar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>Upload</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Upload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Upload</servlet-name>
+	    <url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>Download</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Download</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Download</servlet-name>
+	    <url-pattern>/download/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>Language</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Language</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Language</servlet-name>
+	    <url-pattern>/language</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>FileMan</servlet-name>
+		<servlet-class>com.enlightware.pixpack.FileMan</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>FileMan</servlet-name>
+	    <url-pattern>/fileman</url-pattern>
+	</servlet-mapping>
+
+<!-- Account -->
+	<servlet>
+    	<servlet-name>Autologin</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Autologin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Autologin</servlet-name>
+	    <url-pattern>/autologin</url-pattern>
+	</servlet-mapping>
+	
+<!-- Script -->
+	<servlet>
+    	<servlet-name>Script</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Script</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Script</servlet-name>
+	    <url-pattern>/script/*</url-pattern>
+	</servlet-mapping>
+
+<!-- Show -->
+	<servlet>
+    	<servlet-name>Show</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Show</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Show</servlet-name>
+	    <url-pattern>/show/*</url-pattern>
+	</servlet-mapping>
+
+<!-- Vote -->
+	<servlet>
+    	<servlet-name>Vote</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Vote</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>Vote</servlet-name>
+	    <url-pattern>/vote</url-pattern>
+	</servlet-mapping>
+
+<!-- Inlet -->
+	<servlet>
+    	<servlet-name>InletJs</servlet-name>
+		<servlet-class>com.enlightware.pixpack.inlet.Inlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>InletJs</servlet-name>
+	    <url-pattern>/inlet/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>InletFrame</servlet-name>
+		<servlet-class>com.enlightware.pixpack.inlet.Inlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>InletFrame</servlet-name>
+	    <url-pattern>*.inlet</url-pattern>
+	</servlet-mapping>
+
+<!-- Image -->
+	<servlet>
+    	<servlet-name>JPG</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Image</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>JPG</servlet-name>
+	    <url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>PNG</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Image</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>PNG</servlet-name>
+	    <url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>GIF</servlet-name>
+		<servlet-class>com.enlightware.pixpack.Image</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>GIF</servlet-name>
+	    <url-pattern>*.gif</url-pattern>
+	</servlet-mapping>
+
+<!-- API -->
+	<servlet>
+    	<servlet-name>API.Statistic</servlet-name>
+		<servlet-class>com.enlightware.pixpack.api.Statistic</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>API.Statistic</servlet-name>
+	    <url-pattern>/api/statistic</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>API.AccountMail</servlet-name>
+		<servlet-class>com.enlightware.pixpack.api.AccountMail</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>API.AccountMail</servlet-name>
+	    <url-pattern>/api/account/mail</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>API.AccountFolder</servlet-name>
+		<servlet-class>com.enlightware.pixpack.api.AccountFolder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>API.AccountFolder</servlet-name>
+	    <url-pattern>/api/account/folder</url-pattern>
+	</servlet-mapping>
+</web-app>

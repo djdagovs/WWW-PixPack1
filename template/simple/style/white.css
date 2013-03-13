@@ -1,0 +1,18 @@
+@import url(default.css);
+
+.gallery_title {
+	color: white;
+}
+
+.gallery_description {
+	border-color: white;
+	color: white;
+}
+
+.gallery_image img {
+	border-color: white;
+}
+
+.gallery_page, .gallery_page * {
+	color: white;
+}

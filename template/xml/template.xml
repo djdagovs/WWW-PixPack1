@@ -1,0 +1,6 @@
+<template type="gallery">
+	<name>xml</name>
+	<title>XML</title>
+	<author>PixPack</author>
+	<description>Unfiltered XML result</description>
+</template>

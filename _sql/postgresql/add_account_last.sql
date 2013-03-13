@@ -1,0 +1,4 @@
+ALTER TABLE image.account ADD COLUMN last varchar(17);
+UPDATE image.account SET last='0000000000000000';
+ALTER TABLE image.account ALTER COLUMN last SET NOT NULL;
+ALTER TABLE image.account ALTER COLUMN last SET DEFAULT '00000000000000000';

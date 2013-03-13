@@ -1,0 +1,22 @@
+<gallery>
+	<user>Owner of the gallery/images</user>
+	<title>Title of the gallery</title>
+	<style>Templates-Style</style>
+	<description>Description of this gallery</description>
+	<folder>Folder which is the source of this gallery</folder>
+	<col></col>
+	<row></row>
+	<image>
+		<name></name>
+		<timestamp></timestamp>
+		<key></key>
+		<last></last>
+		<count></count>
+		<description></description>
+		<adult></adult>
+		<width></width>
+		<height></height>
+		<size></size>
+		<extension></extension>
+	</image>
+</gallery>

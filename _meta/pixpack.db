@@ -1,0 +1,6 @@
+Type		=	PostgreSQL
+Host		=	localhost
+Port		=	5432
+Name		=	pixpack
+User		=	pixpack
+Password	=	pixpack

@@ -1,0 +1,27 @@
+.vote {
+	width: 101px;
+	height: 12px;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+
+.vote div {
+	float: left;
+	font-size: 2px;
+	width: 19px;
+	height: 10px;
+	border: 1px solid black;
+	border-right: 0px none;
+	cursor: pointer;
+}
+
+.vote span a {
+	float: none;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.vote span a:hover {
+	text-decoration: underline;
+}

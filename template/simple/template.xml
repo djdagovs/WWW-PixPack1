@@ -1,0 +1,8 @@
+<template type="gallery">
+	<name>simple</name>
+	<title>Simple</title>
+	<author>PixPack</author>
+	<description>Simple template with no decorations</description>
+	<style>white</style>
+	<style>black</style>
+</template>

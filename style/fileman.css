@@ -1,0 +1,133 @@
+#design_fileman {
+	width: 150px;
+	height: 500px;
+	border: 1px inset;
+}
+
+.fileman_navigation {
+}
+
+.fileman_navigation a {
+	cursor: default;
+	text-decoration: none;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.fileman_navigation a:hover {
+	background-color: #9EC79C;
+	color: white;	
+}
+
+.fileman_navigation div {
+	border: 1px outset;
+	border-bottom: 0px none;
+}
+
+.fileman_navigation div .menu {
+	/*margin-left: -1px;*/
+}
+
+#design_fileman_folder, #design_fileman_file {
+	overflow: auto;
+}
+
+#design_fileman_folder {
+	width: 150px;
+	height: 100%;
+	border-bottom: 1px solid black;
+}
+
+#design_fileman_folder ul {
+	list-style-position: outside;
+	margin: 0px;
+}
+
+#design_fileman_folder ul {
+	margin-left: 0px;
+}
+
+#design_fileman_folder li {
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+#design_fileman_folder li:hover {
+	background-color: lightgray;
+}
+
+#design_fileman_folder .root {
+	background-image: url(../image/fileman/folder_root.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+#design_fileman_folder .open {
+	list-style-image: url(../image/fileman/folder_open.gif);
+}
+
+#design_fileman_folder .close {
+	list-style-image: url(../image/fileman/folder_close.gif);
+}
+
+#design_fileman_folder .active {
+	background-color: #9EC79C;
+	color: white;
+}
+
+#design_fileman_content {
+	height: 500px;
+	overflow: auto;
+	border: 1px inset;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.fileman_icon {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	/*
+ width: 100%;
+ height: 100%;
+ */
+	text-align: left;
+}
+
+.fileman_icon li {
+	float: left;
+	overflow: hidden;
+	display: block;
+	text-align: center;
+	width: 96px;
+	height: 96px;
+}
+
+.fileman_icon li a {
+	text-decoration: none;
+}
+
+.fileman_icon li a img {
+	float: left;
+	width: 80px;
+	height: 60px;
+	margin-left: 16px;
+	vertical-align: text-bottom;
+	cursor: pointer;
+	border: 1px none;
+}
+
+.fileman_icon li a img:hover {
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+
+.fileman_icon li a span {
+	display: block;
+	cursor: pointer;
+}

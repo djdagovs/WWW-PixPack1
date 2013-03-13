@@ -1,0 +1,40 @@
+.fileman_navigation {
+	margin-bottom: -20px;
+}
+#design_fileman_folder ul {
+	margin-left: 30px;
+}
+#design_fileman_file ul {
+	margin-left: 15px;
+}
+
+.menu {
+	margin-top: 14px;
+	margin-left: -65px;
+}
+
+#design_navigation .menu {
+	margin-top: 18px;
+}
+
+#design_navigation .mypix {
+	top: 2px;
+	left: 386px;
+}
+
+#design_advertisement_sidebar {
+	margin-top: 16px;
+}
+
+.menu hr {
+	width: 50px;
+}
+
+button {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.hotlink input, .hotlink textarea {
+	width: 450px;
+}

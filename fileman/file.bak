@@ -1,0 +1,115 @@
+	
+<form onsubmit="return dummy()">
+	<hr/>
+
+	<button onclick="fileman_show('fileman.file.hotlink')"><%=i18n.getText("fileman.file.hotlink") %></button>
+	<button onclick="fileman_show('fileman.file.rename')"><%=i18n.getText("fileman.file.rename") %></button>
+	<button onclick="fileman_show('fileman.file.move')"><%=i18n.getText("fileman.file.move") %></button>
+	<button onclick="fileman_show('fileman.file.desc')"><%=i18n.getText("fileman.file.desc") %></button>
+	<button onclick="fileman_show('fileman.file.status')"><%=i18n.getText("fileman.file.status") %></button>
+	<button onclick="fileman_show('fileman.file.delete')"><%=i18n.getText("fileman.file.delete") %></button>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.hotlink") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.hotlink.text") %>
+		</p>
+		<input type="hidden" id="fileman.file.hotlink"/>	<!-- dummy -->
+		<%request.setAttribute("internalFilename",content+'.'+dbfs.getExtension().getName()); %>
+
+		<div class="hotlink hotlink_short">
+			<%@include file="../hotlink_include.jsp" %>
+		</div>
+	</fieldset>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.rename") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.rename.text") %>
+		</p>
+		<input type="text" id="fileman.file.rename" size="64" class="field" value="<%=dbfs.getName() %>"/>
+		<button onclick="fileman_file_rename()"><%=i18n.getText("fileman.file.rename") %></button>
+	</fieldset>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.move") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.move.text") %>
+		</p>
+		<input type="hidden" id="fileman.file.move" value="local"/>
+		<table>
+			<tr>
+				<td>
+					<input type="radio" name="move" value="local" onclick="fileman_file_move_switch('local')" checked="checked"/>
+					<span onclick="fileman_file_move_switch('local')" style="cursor: default;"><%=i18n.getText("fileman.file.move.local") %></span>
+					<br/>
+					<input type="radio" name="move" value="global" onclick="fileman_file_move_switch('global')"/>
+					<span onclick="fileman_file_move_switch('global')" style="cursor: default;"><%=i18n.getText("fileman.file.move.global") %></span>
+				</td>
+				<td>
+					<div id="fileman.file.move.global" class="hidden">
+						<jsp:setProperty name="folder" property="selectionName" value="global"/>
+						<jsp:getProperty name="folder" property="selection"/>
+					</div>
+					<div id="fileman.file.move.local" class="visible">
+						<jsp:setProperty name="folder" property="username" value="<%=login.getUsername() %>"/>
+						<jsp:setProperty name="folder" property="selectionName" value="local"/>
+						<jsp:setProperty name="folder" property="selectionException" value="<%=dbfs.getFolder().getName() %>"/>
+						<jsp:getProperty name="folder" property="selection"/>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<br/>
+		<button onclick="fileman_file_move()"><%=i18n.getText("fileman.file.move") %></button>
+	</fieldset>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.desc") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.desc.text") %>
+		</p>
+		<textarea type="text" id="fileman.file.desc" class="area"><%=dbfs.getDescription() %></textarea>
+		<button onclick="fileman_file_desc()"><%=i18n.getText("fileman.file.desc") %></button>
+	</fieldset>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.status") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.status.text") %>
+		</p>
+		<br/>
+		<p>
+			<input type="checkbox" name="public" <%=(dbfs.isPublic() ? "checked=\"checked\"" : "") %>/>
+			<%=i18n.getText("fileman.file.status.public") %>
+		</p>
+		<p>
+			<input type="checkbox" name="adult" <%=(dbfs.isAdult() ? "checked=\"checked\"" : "") %>/>
+			<%=i18n.getText("fileman.file.status.adult") %>
+		</p>
+		<input type="hidden" id="fileman.file.status"/>	<!-- dummy -->
+		<button onclick="fileman_file_status()"><%=i18n.getText("fileman.file.status") %></button>
+	</fieldset>
+
+	<fieldset class="hidden">
+		<legend>
+			<%=i18n.getText("fileman.file.delete") %>
+		</legend>
+		<p>
+			<%=i18n.getText("fileman.file.delete.text") %>
+		</p>
+		<input type="hidden" id="fileman.file.delete"/>	<!-- dummy -->
+		<button onclick="fileman_file_delete()"><%=i18n.getText("fileman.file.delete") %></button>
+	</fieldset>
+</form>

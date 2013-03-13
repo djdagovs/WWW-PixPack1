@@ -1,0 +1,1 @@
+INSERT INTO image.template (name, title, author, description, styles, key_parent) VALUES ('simple', 'Simple', 'PixPack', 'Simple template with no decorations', '|white|black|', 1);
